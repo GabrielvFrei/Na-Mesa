@@ -9,17 +9,18 @@
     letter-spacing: 1px;
     list-style: none;
 }
-body{
+body {
     width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
+    font-family: Arial, sans-serif;
     grid-template-areas: 
     "header"
     "menuoct"
-    "image"
-    "containerMid"
+    "main"
+    "btnone"
     "footer"
     ;
     background-color: rgb(242, 233, 215);
@@ -28,8 +29,12 @@ html{
     width: 100vw;
     height: 100vh;
     font-size: 62,5%;
-    background-color: #EEEEEE;
+    background-color: rgb(242, 233, 215);
     overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 header{
     width: 100%;
@@ -157,55 +162,78 @@ header{
     }
 }
 
-.image{
+
+.image {
     display: flex;
     width: 100vw;
     height: 100vh;
     justify-content: center;
     margin-bottom: 5vw;
 }
-#img-pc{
+
+#img-pc {
     width: 100%;
 }
-#img-phone{
+
+#img-phone {
     display: none;
 }
-.container-mid > p{
-    border: saddlebrown solid 1px;
-    width: 70%;  
-    margin-bottom: 1vw;
-}
-.container-mid > h1{
-    font-size: xx-large;
-    font-weight: 900;
-    color: rgb(160, 69, 46);
-}
-.container-mid{
-    grid-area: containerMid;
-    justify-content: center;
+
+.container {
+    padding: 20px;
+    grid-area: main;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgba(235, 208, 158, 0.609);
-}
-.container-mid > button{
-    display: flex;
-    align-items: center;
     justify-content: center;
-    width: 20%;
-    height: 5vh;
-    border: none;
-    background-color: rgba(135, 49, 49, 0.259);
-    border-radius: 3px;
-    margin-top: 1vw;
-    margin-bottom: 3vw;
-    cursor: pointer;
-    transition: 2s;
 }
-.container-mid > button:hover{
-    opacity: 80%;
-    width: 19vw;
+
+.gridcontainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 5vh;
 }
+
+.gridReceita {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 90vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 30px;
+    transition: transform 0.3s ease; 
+    
+}
+
+.gridReceita:hover {
+    transform: scale(1.05); 
+}
+
+.gridReceita img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 80%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.gridReceita a {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+}
+
+.gridReceita h2 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+}
+.gridReceita p{
+    color: #000000;
+}
+
 footer{
     grid-area: footer;
     width: 100%;
@@ -301,6 +329,65 @@ footer{
     font-weight: 100;
     background-color: rgb(88, 51, 51);
 }
+
+.btn-one {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #000000;
+    transition: all 0.3s;
+    position: relative;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    width: 250px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    grid-area: btnone;
+}
+
+.btn-one span {
+    transition: all 0.3s;
+}
+
+.btn-one::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(197, 44, 44, 0.5);
+    border-bottom-color: rgba(207, 44, 44, 0.5);
+    transform: scale(0.1, 1);
+}
+
+.btn-one:hover span {
+    letter-spacing: 2px;
+}
+
+.btn-one:hover::before {
+    opacity: 1; 
+    transform: scale(1, 1); 
+}
+
+.btn-one::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
 @media screen and (max-width: 1000px) {
     #footer_content{
         grid-template-columns: repeat(2, 1fr);
@@ -326,6 +413,13 @@ footer{
     #image-pc{
         display:none;
     }
+
+    .gridcontainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }    
+
 }
 .menu-content .list-itens ul a li{
     display: flex;
