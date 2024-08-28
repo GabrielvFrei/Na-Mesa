@@ -18,7 +18,21 @@
                 </ul>
             </nav>
         </div>
+
+        <div class="btnmenuoct">
+            <button id="btnoct" onclick="menuoculto()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
+    <div class="oculto">
+        <div class="menuoct">
+            <a href="receitas.html" id="receita">Nossas Receitas</a>
+            <a href="login.html" id="login">Login</a>
+        </div>
+    </div>
     <div class="container">
         <div class="gridcontainer">
             <div class="gridReceita">
@@ -65,12 +79,72 @@
             </div>
         </div>
     </div>
-    <div class="btn btn-one">
+    <div class="btn-one">
         <span>VER MAIS RECEITAS</span>
     </div>
     <footer>
-        <p>&copy; 2024 Receitas Culinárias insanas. Todos os direitos reservados.</p>
-        <p><a href="mailto:contato@receitasculinariasinsanas.com">Contato</a> | <a href="#">Política de Privacidade</a></p>
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <h1>Na Mesa</h1>
+                <p>O site com a maior diversidade<br>de receitas do Brasil</p>
+                <div id="footer_social_media">
+                    <a href="#" class="footer-link" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="footer-link" id="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="footer-link" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <ul class="footer-list">
+                <li>
+                    <h3>Blog</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Tech</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Ajuda</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Contatos</a>
+                </li>
+            </ul>
+            <ul class="footer-list">
+                <li>
+                    <h3>Products</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">App</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Livros</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Desktop</a>
+                </li>
+            </ul>
+            <div id="footer_subscribe">
+                <h3>Inscreva-se</h3>
+                <p>
+                    Caso queira receber receitas exclusivas, nos diga seu email
+                </p>
+                <div id="input_group">
+                    <input type="email" id="email">
+                    <button>
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="footer_copyright">
+            &#169
+            2024 all rights reserved
+        </div>
     </footer>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -14,9 +14,10 @@ body{
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-template-areas: 
     "header"
+    "menuoct"
     "image"
     "containerMid"
     "footer"
@@ -81,6 +82,81 @@ header{
     transform: 2ms ease-in;
     position:relative;
 }
+
+.btnmenuoct{
+    display: none;
+}
+
+.oculto{
+    display: none;
+    grid-area: menuoct;
+}
+
+@media screen and (max-width: 800px) {
+    .header-menu{
+        display: none;
+    }
+    .btnmenuoct{
+        display: block;
+        justify-self: right;
+        margin-right: 20px;
+    }
+
+    .btnmenuoct button{
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+        align-items: center;
+        border: 0;
+        background: transparent;
+    }
+
+    .btnmenuoct button:hover{
+        cursor: pointer;
+    }
+
+    .btnmenuoct button span{
+        width: 30px;
+        height: 2px;
+        border-radius: 10px;
+        background:  #a56307;
+
+        transition: all 0.6s;
+    }
+
+    .btnmenuoct button.ativo span:nth-child(2){
+        opacity: 0;
+        width: 0;
+    }
+
+    .btnmenuoct button.ativo span:nth-child(1){
+        transform: rotate(-45deg) translate(-4px, 4px);
+    }
+
+    .btnmenuoct button.ativo span:nth-child(3){
+        transform: rotate(45deg) translate(-5px, -4px);
+    }
+    
+    .menuoct{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        background-color:  rgb(242, 233, 215);
+        padding: 30px;
+    }
+    .menuoct a{
+        color: #a56307;
+        font-weight: 800;
+    }
+    .open{
+        display: block;
+    }
+}
+
 .image{
     display: flex;
     width: 100vw;

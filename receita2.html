@@ -13,12 +13,26 @@
             <a href="index.html">Na mesa</a>
             <nav class="header-menu">
                 <ul class="list-itens">
-                    <li>Nossas Receitas</li>
-                    <li>Login</li>
+                    <a href="receitas.html" id="receita">Nossas Receitas</a>
+                    <a href="login.html" id="login">Login</a>
                 </ul>
             </nav>
         </div>
+
+        <div class="btnmenuoct">
+            <button id="btnoct" onclick="menuoculto()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
+    <div class="oculto">
+        <div class="menuoct">
+            <a href="receitas.html" id="receita">Nossas Receitas</a>
+            <a href="login.html" id="login">Login</a>
+        </div>
+    </div>
     <div class="image">
         <img id="img-pc" src="imgs-index/strogonoff2.webp" alt="">
         <img id="img-phone" src="/imgs-index/img-index-phone.jpg" alt="">
@@ -71,7 +85,11 @@
                     Sirva com batata palha e arroz branco à parte.
                 </h5>
             </div>
-            
+            <div id="forma-de-preparo">
+                <h4>6</h4>
+                <h5>
+                    Aproveite a refeição
+                </h5>
             </div>
         </div>
     </div>       
@@ -138,5 +156,6 @@
             2024 all rights reserved
         </div>
     </footer>
+    <script src="app.js"></script>
 </body>
 </html>
