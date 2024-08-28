@@ -49,11 +49,17 @@ header{
     align-items: center;
 }
 .menu-content .list-itens li{
+    display: flex;
+    justify-content: space-around;
     cursor: pointer;
     color: rgb(57, 57, 57);
     font-weight: 400;
     font-size: medium;
     position: relative;
+}
+.menu-content .list-itens a li {
+    display: flex;
+    justify-content: space-between;
 }
 .menu-content a{
     color: #a56307;
@@ -69,9 +75,11 @@ header{
     color: #ffffff;
 }
 .menu-content .list-itens a{
+    display: flex;
+    justify-content: space-between;
     text-decoration: none;
     transform: 2ms ease-in;
-    position:absolute;
+    position:relative;
 }
 .image{
     display: flex;
@@ -242,4 +250,8 @@ footer{
     #image-pc{
         display:none;
     }
+}
+.menu-content .list-itens ul a li{
+    display: flex;
+    justify-content: space-around;
 }
